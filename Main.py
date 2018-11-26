@@ -1,22 +1,48 @@
 #imports the discord and asyncio libraries.
 import discord
 import asyncio
+import Greet
+
 
 #discord authentication token for bot and initializing bot.
 token = 'NTA1MTMwNjQwMTUzMzc4ODI4.Drp1bg.aR_p1wU8JED-0gLUWV-UGdZ9lts'
-prefix= "S2"
+prefix = "S2"
 
-#set tachanka to  an instance of discord.Client so that we can pass class
-#specific methods to it and contact the discord websocket.
+
+
+
 tachanka = discord.Client()
 
-#event decorator passes on_ready to event() which calls setattr() on to it.
+''' returns a generator with all the channels that tachanka can talk in, 
+where cType is one of the Enumerations for discord.channelType which are
+the strings text, voice, private, group and category.'''
+
+def getChannelWithPermission(cType):
+	values = {"text":discord.ChannelType.text,
+			  "voice":discord.ChannelType.voice,
+			  "private":discord.ChannelType.private,
+			  "group":discord.ChannelType.group,
+		}
+
+	for server in tachanka.servers:
+		for channel in server.channels:
+			if cType in values:
+				if channel.type == values[cType]:
+					yield channel
+
+
+'''event decorator passes on_ready coroutine to discord.client.event() which
+is a decerator that registers an event to listen to and takes a coroutine
+function as input.'''
+
+
 @tachanka.event
 async def on_ready():
-    print("I'm actually top fragger in silver 2, I just can't get out.")
+	print("I'm actually top fragger in silver 2, I just can't get out.")
+
+
 
 #@tachanka.event
-
-
-
+#async def on_message():
+	
 tachanka.run(token)
