@@ -20,13 +20,3 @@ for chunk in dJoke.iter_content(100000):
         saveFile.write(chunk)
         
 saveFile.close()
-
-#def getURLs(url):
-    
-#Jokes class for taking two jokes and printing them
-#class dadJokeC:
- #   def __init__(index, typeJ):
-  #      index = self.index()
-   #     typeJ = self.typeJ()
-        
-#   def create(self,index)
