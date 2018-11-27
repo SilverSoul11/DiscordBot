@@ -4,21 +4,23 @@ import random
 
 class attack_Move:
 	
-	def __init__(self, ap, damage, attackNumber):
+	def __init__(self, name, ap, damage):
+		self.name = name
 		self.ap = ap
 		self.damage = damage
-		self.attackNumber = attackNumber
+		
+
 
 	def getMoveAssets(self):
 		assets_List = dir(self)
 
 
+#Interactive Move creator, returns a list moveList with attack moveobjects.
 
-def createMoveList(listOfMoves):
-	for i in listOfMoves:
-		numberAssignmentVar = 1
-		randomAp = random.randrange(5,25)
-		randomDmg = random.randrange(10,20)
-		randomAn = numberAssignmentVar
-		i = attack_Move(randomAp, randomDmg, randomAn)
-		numberAssignmentVar += 1
+def create_Move_List(moveNames):
+	moveList = []
+	for i in moveNames:
+		ap = random.randrange(5,25)
+		damage = random.randrange(10,20)
+		moveList.append(attack_Move(i, ap, damage))
+	return moveList

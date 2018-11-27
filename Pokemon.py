@@ -6,12 +6,10 @@ import PokemonAttack
 
 class Pokemon_Abstract:
 
-    def __init__(self, hp, ap, level,moveList):
+    def __init__(self, hp, ap, level):
         self.hp = hp
         self.ap = ap
         self.level = level
-        self.movelist = moveList
-        moveList = []
         hp += hp * random.randrange(0,0.2)
 
     def getHp(hp):
@@ -24,26 +22,35 @@ class Pokemon_Abstract:
 #Implementation of the first Pokemon Pikachu.
 class Pikachu(PokemonAbstract):
 
-    def __init__(self)
+    def __init__(self, moveList):
         super().__init__()
-        self.attackMove = attackMove
         self.type = type
-        moveList = ['Thunder Tackle', 'Lightning Bolt', 'Growl',
-        'Tackle']
-        type = electric
-
-        for i in moveList:
-            numberAssignmentVar = 1
-            i = attackMove()
-            i.ap = random.randrange(5,25)
-            i.damage = random.randrange(10,20)
-            i.attackNumber = numberAssignmentVar
-            numberAssignmentVar += 1
+        type = Electric
+        listOfMoveNamesP = ["Lightning Bolt"."Thunder tackle".
+        "Tail Whip"."Thunder Bolt"]
 
         
-#Optional: give a name to pokemon.
-    def setName(self, name):
-        self.name = name
+class Charmander(PokemonAbstract):
+
+    def __init__(self, moveList):
+        super().__init__()
+        self.type = type
+        type = Fire
+        listOfMoveNamesC = ["Explosion"."Blast Burn".
+        "Tail Whip"."Over Heat"]
+
+#Use this method to create a pikachu.
+    def pokemonConstructor(name, species, listOfMoveNames):
+        if species == "pikachu":
+            name = pikachu()
+            pikachuMl= PokemonAttack.create_Move_List(listOfMoveNamesP)
+            name.moveList = pikachuMl
+
+        elif speicies == "Charmander":
+            name = Charmander()
+            charmanderMl= PokemonAttack.create_Move_List(listOfMoveNamesP)
+            name.moveList = charmanderML
+
 
     def attack(self, attackMove, otherPokemon):
 #initilze MoveSet and save to localFile for reAccess.
