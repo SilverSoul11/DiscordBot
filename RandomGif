@@ -1,8 +1,0 @@
-import requests
-
-"""Function to post random funny gif from giphy website."""
-def Meme():
-    url = "https://api.giphy.com/v1/gifs/random?api_key=OeVOS0X6WOQNHUEtsOqXobSt3jvPeA11&tag=funny&rating=R"
-    get_json_data = requests.get(url).json()
-    get_url = get_json_data['data']['url']
-    random get_url()
