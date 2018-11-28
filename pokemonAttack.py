@@ -4,8 +4,7 @@ import random
 
 class attack_Move:
 	
-	def __init__(self, name, ap, damage):
-		self.name = name
+	def __init__(self, ap, damage):
 		self.ap = ap
 		self.damage = damage
 		
@@ -17,10 +16,10 @@ class attack_Move:
 
 #Interactive Move creator, returns a list moveList with attack moveobjects.
 
-def create_Move_List(moveNames):
-	moveList = []
+def create_Move_List(moveNames, level):
+	moveList = {}
 	for i in moveNames:
 		ap = random.randrange(5,25)
-		damage = random.randrange(10,20)
-		moveList.append(attack_Move(i, ap, damage))
+		damage = random.randrange(10,20) * (level ** (1/2))
+		moveList[i] = attack_Move(ap, damage)
 	return moveList
