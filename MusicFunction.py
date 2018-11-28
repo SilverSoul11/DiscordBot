@@ -5,10 +5,12 @@ import pafy
 import youtube_dl
 
 """This whole code allows to search for the most popular result on youtube. 
-Instead of displaying video it post link to the site. Code was based on code 
-written by Grant Curell, 5 Feb 2015, "Python – Search Youtube for Video", 
-https://www.codeproject.com/Articles/873060/Python-Search-Youtube-for-Video
-This function looks for first YT url that pops out in the search results."""
+Instead of displaying video it post link to the site.
+The function get_youtube_url was based on code written by 
+Grant Curell, 5 Feb 2015, "Python – Search Youtube for Video", 
+https://www.codeproject.com/Articles/873060/Python-Search-Youtube-for-Video"""
+
+"""This function looks for first YT url that pops out in the search results."""
 
 def get_youtube_url():
     search_for = urllib.parse.urlencode({"search_query" : input("Search: ")})
