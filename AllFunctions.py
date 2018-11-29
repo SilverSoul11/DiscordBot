@@ -41,3 +41,15 @@ def Meme():
     get_json_data = requests.get(url).json()
     get_url = get_json_data['data']['url']
     return get_url
+    
+"""Function to check current weather """    
+def weather(city):
+    api_key = '9a492c0318e0a21a9e8a75e9cb0a8efd'
+    url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api_key + '&units=metric'
+    get_json_data = requests.get(url).json()
+    get_description = get_json_data['weather'][0]['description']
+    get_temp = get_json_data['main']['temp']
+    get_temp = str(get_temp)
+    weather_today = 'Today we have ' + get_description + ' and ' + get_temp + '^C.'
+    return weather_today
+
