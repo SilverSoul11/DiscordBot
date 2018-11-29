@@ -145,7 +145,7 @@ async def on_message(message):
         	await tachanka.send_message(message.channel, msg)
 		
 		
-"""Generates random gif"
+"""Generates random gif"""
 	if message.content.startswith('$gif'):
         	gif = Meme()
         	msg = gif.format(message)
