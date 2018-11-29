@@ -9,6 +9,7 @@ class pokemon():
     def __init__(self):  
         self.level = random.randrange(1,5)
         self.hp = int(100 * (self.level ** (1 / 2)))
+        self.hpatstart = self.hp
 
 
 class pikachu(pokemon):
