@@ -5,7 +5,7 @@ import PokemonUser
 import pokemon
 import re
 import random
-from AllFunctions import*
+
 
 #discord authentication token for bot and initializing bot.
 token = 'NTA1MTMwNjQwMTUzMzc4ODI4.Drp1bg.aR_p1wU8JED-0gLUWV-UGdZ9lts'
