@@ -5,6 +5,7 @@ import PokemonUser
 import pokemon
 import re
 import random
+from AllFunctions import*
 
 #discord authentication token for bot and initializing bot.
 token = 'NTA1MTMwNjQwMTUzMzc4ODI4.Drp1bg.aR_p1wU8JED-0gLUWV-UGdZ9lts'
@@ -137,7 +138,17 @@ async def on_message(message):
 							await tachanka.send_message(message.channel, 'pick a move ' + 
 															str(pokemonObj.listOfMoveNames) + ' in this format $use XXX')
 
-
-
+"""Generates random cat gif or pic"""
+	if message.content.startswith('$meow'):
+        	cat = getCatPic()
+        	msg = cat.format(message)
+        	await tachanka.send_message(message.channel, msg)
+		
+		
+"""Generates random gif"
+	if message.content.startswith('$gif'):
+        	gif = Meme()
+        	msg = gif.format(message)
+        	await tachanka.send_message(message.channel, msg)
 	
 tachanka.run(token)
