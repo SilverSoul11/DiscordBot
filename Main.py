@@ -139,12 +139,5 @@ async def on_message(message):
 
 
 
-RainbowSixSiege = discord.Game()
-RainbowSixSiege.name = "Rainbow Six Siege"
-
-await tachanka.change_presence(game=RainbowSixSiege, idle=False)
-		
-
-
 	
 tachanka.run(token)
