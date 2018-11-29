@@ -155,7 +155,12 @@ async def on_message(message):
 	if message.content.startswith('!search'):
 		s = message.content[8:]
 		music = get_youtube_url(s)
-		await client.send_message(message.channel, music)
+		await tachanka.send_message(message.channel, music)
 
+#Function to check current weather
+	if message.content.startswith('!weather'):
+		c = message.content[9:]
+		w = weather(c)
+		await tachanka.send_message(message.channel, w)
 	
 tachanka.run(token)
